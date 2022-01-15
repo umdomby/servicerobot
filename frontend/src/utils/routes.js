@@ -7,7 +7,7 @@ import {
     OPTION_2,
     OPTION_3,
     OPTION_4,
-    OPTION_5, OPTION_6, OPTION_7
+    OPTION_5, OPTION_6, OPTION_7, ADMIN_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE
 } from "./consts";
 import NavigationOne from "../pages/NavigationOne";
 import NavigationTwo from "../pages/NavigationTwo";
@@ -20,25 +20,27 @@ import Option5 from "../pages/Option5";
 import Option6 from "../pages/Option6";
 import Option7 from "../pages/Option7";
 import NavigationFour from "../pages/NavigationFour";
+import Admin from "../pages/Admin";
+import Auth from "../pages/Auth";
 
 
 
 export const authRoutes = [
-    // {
-    //     path: ADMIN_ROUTE,
-    //     Component: Admin
-    // },
-    // {
-    //     path: BASKET_ROUTE,
-    //     Component: Basket
-    // },
-    // {
-    //     path: ADMIN_SETTINGS,
-    //     Component: Champ
-    // },
+    {
+        path: ADMIN_ROUTE,
+        Component: Admin
+    },
 ]
 
 export const publicRoutes = [
+    {
+        path: LOGIN_ROUTE,
+        Component: Auth
+    },
+    {
+        path: REGISTRATION_ROUTE,
+        Component: Auth
+    },
     {
         path: NAVIGATION_ONE,
         Component: NavigationOne

@@ -10,4 +10,10 @@ export const OPTION_5 = '/option5'
 export const OPTION_6 = '/option6'
 export const OPTION_7 = '/option7'
 
+export const ADMIN_ROUTE = '/admin'
+export const LOGIN_ROUTE = '/login'
+export const REGISTRATION_ROUTE = '/registration'
+export const DEVICE_ROUTE = '/device'
+
+
 

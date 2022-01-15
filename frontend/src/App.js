@@ -4,8 +4,27 @@ import Header from "./components/Header";
 import {BrowserRouter} from "react-router-dom";
 import AppRouter from "./components/AppRouter";
 import {Col, Row} from "antd";
+import {useContext, useEffect, useState} from "react";
+import {Spinner} from "react-bootstrap";
+import {check} from "./http/userAPI";
+import {Context} from "./index";
 
 function App() {
+
+    const {user} = useContext(Context)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        check().then(data => {
+            user.setUser(true)
+            user.setIsAuth(true)
+        }).finally(() => setLoading(false))
+    }, [])
+
+    if (loading) {
+        return <Spinner animation={"grow"}/>
+    }
+
   return (
       <BrowserRouter>
           <Header />
