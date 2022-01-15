@@ -1,6 +1,7 @@
 export const NAVIGATION_ONE = '/'
 export const NAVIGATION_TWO = '/two'
 export const NAVIGATION_THREE = '/three'
+export const NAVIGATION_FOUR = '/four'
 export const OPTION_1 = '/option1'
 export const OPTION_2 = '/option2'
 export const OPTION_3 = '/option3'

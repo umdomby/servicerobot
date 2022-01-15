@@ -11,7 +11,7 @@ const NavigationThree = observer(() => {
 
     return (
         <div>
-            Navigation 2
+            Navigation 3
         </div>
     );
 });

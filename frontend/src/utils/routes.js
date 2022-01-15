@@ -2,6 +2,7 @@ import {
     NAVIGATION_ONE,
     NAVIGATION_TWO,
     NAVIGATION_THREE,
+    NAVIGATION_FOUR,
     OPTION_1,
     OPTION_2,
     OPTION_3,
@@ -18,6 +19,7 @@ import Option4 from "../pages/Option4";
 import Option5 from "../pages/Option5";
 import Option6 from "../pages/Option6";
 import Option7 from "../pages/Option7";
+import NavigationFour from "../pages/NavigationFour";
 
 
 
@@ -48,6 +50,10 @@ export const publicRoutes = [
     {
         path: NAVIGATION_THREE,
         Component: NavigationThree
+    },
+    {
+        path: NAVIGATION_FOUR,
+        Component: NavigationFour
     },
     {
         path: OPTION_1,

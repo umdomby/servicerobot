@@ -5,6 +5,7 @@ import {Link, useHistory} from 'react-router-dom'
 import { Menu } from 'antd';
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import {
+    NAVIGATION_FOUR,
     NAVIGATION_ONE,
     NAVIGATION_THREE,
     NAVIGATION_TWO,
@@ -14,13 +15,14 @@ import {
     OPTION_4, OPTION_5, OPTION_6, OPTION_7
 } from "../utils/consts";
 const { SubMenu } = Menu;
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub3'];
+const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 
 const NavBarTop = observer(() => {
 
     const {device} = useContext(Context)
     const history = useHistory()
     const [openKeys, setOpenKeys] = useState(['sub1']);
+    const [navigationOld, setNavigationOld] = useState(NAVIGATION_ONE);
 
     const onOpenChange = keys => {
         const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1);
@@ -32,36 +34,22 @@ const NavBarTop = observer(() => {
         switch (latestOpenKey) {
             case 'sub1' :
                 history.push(NAVIGATION_ONE)
+                setNavigationOld(NAVIGATION_ONE)
                 break;
             case 'sub2' :
                 history.push(NAVIGATION_TWO)
+                setNavigationOld(NAVIGATION_TWO)
                 break;
             case 'sub3' :
                 history.push(NAVIGATION_THREE)
+                setNavigationOld(NAVIGATION_THREE)
                 break;
-            case '1' :
-                history.push(OPTION_1)
-                break;
-            case '2' :
-                history.push(OPTION_2)
-                break;
-            case '3' :
-                history.push(OPTION_3)
-                break;
-            case '4' :
-                history.push(OPTION_4)
-                break;
-            case '5' :
-                history.push(OPTION_5)
-                break;
-            case '6' :
-                history.push(OPTION_6)
-                break;
-            case '7' :
-                history.push(OPTION_7)
+            case 'sub4' :
+                history.push(NAVIGATION_FOUR)
+                setNavigationOld(NAVIGATION_FOUR)
                 break;
             default:
-                history.push(NAVIGATION_ONE)
+                history.push(navigationOld)
                 break;
         }
     };
@@ -76,12 +64,12 @@ const NavBarTop = observer(() => {
             <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
                 <Menu.Item key="4"><Link to={OPTION_4}>Option 4</Link></Menu.Item>
                 <Menu.Item key="5"><Link to={OPTION_5}>Option 5</Link></Menu.Item>
-                {/*<SubMenu key="sub4" title="Submenu">*/}
-                {/*    <Menu.Item key="9">Option 8</Menu.Item>*/}
-                {/*    <Menu.Item key="9">Option 9</Menu.Item>*/}
-                {/*</SubMenu>*/}
+                <SubMenu key="sub3" title="Submenu">
+                    <Menu.Item key="8">Option 8</Menu.Item>
+                    <Menu.Item key="9">Option 9</Menu.Item>
+                </SubMenu>
             </SubMenu>
-            <SubMenu key="sub3" icon={<SettingOutlined />} title="Navigation Three">
+            <SubMenu key="sub4" icon={<SettingOutlined />} title="Navigation Four">
                 <Menu.Item key="6"><Link to={OPTION_6}>Option 6</Link></Menu.Item>
                 <Menu.Item key="7"><Link to={OPTION_7}>Option 7</Link></Menu.Item>
             </SubMenu>

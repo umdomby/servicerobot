@@ -5,15 +5,15 @@ import NavBarLeft from "../components/NavBarLeft";
 import { Row, Col } from 'antd';
 
 
-const NavigationTwo = observer(() => {
+const NavigationFour = observer(() => {
 
     const {device, userdata, user} = useContext(Context)
 
     return (
         <div>
-            Navigation 2
+            Navigation 4
         </div>
     );
 });
 
-export default NavigationTwo;
+export default NavigationFour;
