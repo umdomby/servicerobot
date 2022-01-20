@@ -12,10 +12,10 @@ const CreateDevice = observer(({show, onHide}) => {
     const [file, setFile] = useState(null)
     const [info, setInfo] = useState([])
 
-    useEffect(() => {
-        fetchTypes().then(data => device.setTypes(data))
-        fetchBrands().then(data => device.setBrands(data))
-    }, [])
+    // useEffect(() => {
+    //     fetchTypes().then(data => device.setTypes(data))
+    //     fetchBrands().then(data => device.setBrands(data))
+    // }, [])
 
     const addInfo = () => {
         setInfo([...info, {title: '', description: '', number: Date.now()}])

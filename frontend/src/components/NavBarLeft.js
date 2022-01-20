@@ -62,8 +62,8 @@ const NavBarTop = observer(() => {
                     <Menu.Item key="2"><Link to={OPTION_2}>Option 2</Link></Menu.Item>
                     <Menu.Item key="3"><Link to={OPTION_3}>Option 3</Link></Menu.Item>
                 </SubMenu>
-                <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
-                    <Menu.Item key="4"><Link to={OPTION_4}>Option 4</Link></Menu.Item>
+                <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Use control">
+                    <Menu.Item key="4"><Link to={OPTION_4}>Servo</Link></Menu.Item>
                     <Menu.Item key="5"><Link to={OPTION_5}>Option 5</Link></Menu.Item>
                     <SubMenu key="sub3" title="Submenu">
                         <Menu.Item key="8">Option 8</Menu.Item>

@@ -11,7 +11,8 @@ const Option4 = observer(() => {
 
     return (
         <div>
-            Option 4
+            Control servo
+            
         </div>
     );
 });
