@@ -1,65 +1,61 @@
 import {makeAutoObservable} from "mobx";
 
 export default class DeviceStore {
+
     constructor() {
-        this._types = []
-        this._brands = []
-        this._devices = []
-        this._selectedType = {}
-        this._selectedBrand = {}
-        this._page = 1
-        this._totalCount = 0
-        this._limit = 3
+        this._username = 'user'
+        this._webSocket = {}
+        this._connected = false
+        this._close = true
+        this._faceControl = false
+        this._accel = 1
+        this._speedUD = 0
+        this._speedLR = 0
+        this._speech = ''
+        this._lang = ''
+        this._degreegoback = 0
+        this._degreeleftright = 0
+        this._delaycommand = 0
         makeAutoObservable(this)
     }
 
-    setTypes(types) {
-        this._types = types
-    }
-    setBrands(brands) {
-        this._brands = brands
-    }
-    setDevices(devices) {
-        this._devices = devices
-    }
+    get delaycommand() {return this._delaycommand;}
+    setDelaycommand(value) {this._delaycommand = value;}
 
-    setSelectedType(type) {
-        this.setPage(1)
-        this._selectedType = type
-    }
-    setSelectedBrand(brand) {
-        this.setPage(1)
-        this._selectedBrand = brand
-    }
-    setPage(page) {
-        this._page = page
-    }
-    setTotalCount(count) {
-        this._totalCount = count
-    }
+    get degreeleftright() {return this._degreeleftright;}
+    setDegreeleftright(value) {this._degreeleftright = value;}
 
-    get types() {
-        return this._types
-    }
-    get brands() {
-        return this._brands
-    }
-    get devices() {
-        return this._devices
-    }
-    get selectedType() {
-        return this._selectedType
-    }
-    get selectedBrand() {
-        return this._selectedBrand
-    }
-    get totalCount() {
-        return this._totalCount
-    }
-    get page() {
-        return this._page
-    }
-    get limit() {
-        return this._limit
-    }
+    get degreegoback() {return this._degreegoback;}
+    setDegreegoback(value) {this._degreegoback = value;}
+
+    get username() {return this._username;}
+    setUsername(value) {this._username = value;}
+
+    get webSocket() {return this._webSocket;}
+    setWebSocket(value) {this._webSocket = value;}
+
+    get connected() {return this._connected;}
+    setConnected(value) {this._connected = value;}
+
+    get close() {return this._close;}
+    setClose(value) {this._close = value;}
+
+    get faceControl() {return this._faceControl;}
+    setFaceControl(value) {this._faceControl = value;}
+
+    get accel() {return this._accel;}
+    setAccel(value) {this._accel = value;}
+
+    get speedUD() {return this._speedUD;}
+    setSpeedUD(value) {this._speedUD = value;}
+
+    get speedLR() {return this._speedLR;}
+    setSpeedLR(value) {this._speedLR = value;}
+
+    get speech() {return this._speech;}
+    setSpeech(value) {this._speech = value;}
+
+    get lang() {return this._lang;}
+    setLang(value) {this._lang = value;}
+
 }

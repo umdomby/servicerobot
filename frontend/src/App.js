@@ -9,6 +9,7 @@ import {Spinner} from "react-bootstrap";
 import {check} from "./http/userAPI";
 import {Context} from "./index";
 
+
 function App() {
 
     const {user} = useContext(Context)
@@ -16,7 +17,7 @@ function App() {
 
     useEffect(() => {
         check().then(data => {
-            user.setUser(true)
+            user.setUser(data.email)
             user.setIsAuth(true)
         }).finally(() => setLoading(false))
     }, [])
@@ -27,7 +28,7 @@ function App() {
 
   return (
       <BrowserRouter>
-          <Header />
+          <Header />e
           <Row>
               <Col span={18} push={6}>
                   <AppRouter />
